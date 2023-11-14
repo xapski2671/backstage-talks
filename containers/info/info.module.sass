@@ -1,1 +1,59 @@
+@import @/styles/_mixins
 
+.info
+  position: relative
+  z-index: 100
+  width: 100%
+  height: 100%
+  @include fl-tl
+  @include fl-sb
+  padding: 20px 10px
+
+.about
+  width: 22%
+  height: 100%
+  @include fl-tl
+  @include fl-c
+  @include fl-sb
+
+.details
+  p:first-child, a
+    color: #251d20
+    font-size: 18px
+    font-weight: bold
+    line-height: 25px
+  a
+    text-decoration: underline
+
+.copyright
+  font-size: 12px
+  margin-top: 10px
+  margin-bottom: 40px
+  a
+    font-size: 12px
+    margin-top: 10px
+    margin-bottom: 40px
+    text-decoration: underline
+    font-weight: normal
+
+.issues
+  width: 18%
+  height: 100%
+  @include fl-bl
+  @include fl-c
+  @include fl-sb
+
+.email
+  font-size: 18px
+  font-weight: bold
+  line-height: 25px
+
+.issues_box
+  width: 100%
+  @include fl-bl
+  @include fl-c
+  gap: 0.5rem
+  p
+    &:hover
+      text-decoration: underline
+      cursor: pointer

@@ -1,9 +1,9 @@
 import Info from "@/containers/info"
-import React from "react"
+import s from "./page.module.sass"
 
 export default function page() {
 	return (
-		<div>
+		<div className={s.home}>
 			<Info />
 		</div>
 	)
