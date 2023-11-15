@@ -1,6 +1,7 @@
 import s from "./info.module.sass"
+import issues from "../../constants/issues.json"
 
-export default function Info() {
+export default function Info({ currIndex }: { currIndex: number }) {
 	return (
 		<div className={s.info}>
 			<div className={s.about}>
@@ -21,13 +22,21 @@ export default function Info() {
 			<div className={s.issues}>
 				<p className={s.email}>info@backstagetalks.com</p>
 				<div className={s.issues_box}>
-					<p>Issue #7</p>
-					<p>Issue #6</p>
-					<p>Issue #5</p>
-					<p>Issue #4</p>
-					<p>Issue #3</p>
-					<p>Issue #2</p>
-					<p>Issue #1</p>
+					{issues
+						.slice()
+						.reverse()
+						.map((issue, idx) => {
+							return (
+								<p
+									key={idx}
+									style={
+										(currIndex + 1).toString() == issue.id
+											? { fontWeight: "bold", textDecoration: "underline" }
+											: {}
+									}
+								>{`Issue #${issue.id}`}</p>
+							)
+						})}
 				</div>
 			</div>
 		</div>
